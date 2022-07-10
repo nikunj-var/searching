@@ -1,44 +1,44 @@
-// //UNORDERED LINEAR SEARCH
-// //when array elements are not sorted then we have to apply unordered search in which we scan whole array
+//UNORDERED LINEAR SEARCH
+//when array elements are not sorted then we have to apply unordered search in which we scan whole array
 
 
-// #include<iostream>
-// using namespace std;
+#include<iostream>
+using namespace std;
 
-// bool unorderedLsearch(int arr[],int n,int target){
-//     for(int i=0;i<n;i++){
-//         if(arr[i]==target)
-//             return true;
-//     }
-//     return false;
-// }
+bool unorderedLsearch(int arr[],int n,int target){
+    for(int i=0;i<n;i++){
+        if(arr[i]==target)
+            return true;
+    }
+    return false;
+}
 
 
-// int main(){
-//     int n,target;
+int main(){
+    int n,target;
     
-//     cout<<"enter size of array";
-//     cin>>n;
+    cout<<"enter size of array";
+    cin>>n;
     
-//     int arr[n];
-//     cout<<"enter array";
+    int arr[n];
+    cout<<"enter array";
     
-//     for(int i=0;i<n;i++){
-//         cin>>arr[i];
-//     }
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
 
-//     cout<<"enter value whch you want to search";
-//     cin>>target;
+    cout<<"enter value whch you want to search";
+    cin>>target;
     
-//     if(unorderedLsearch(arr,n,target)){
-//         cout<<"element found";
-//     }
-//     else    
-//         cout<<"element not found";
-// }
+    if(unorderedLsearch(arr,n,target)){
+        cout<<"element found";
+    }
+    else    
+        cout<<"element not found";
+}
 
-//ORDERED LINEAR SEARCH
-//when array elements is sorted then we have to apply ordered linear search.
+// ORDERED LINEAR SEARCH
+// when array elements is sorted then we have to apply ordered linear search.
 
 #include<iostream>
 using namespace std;
