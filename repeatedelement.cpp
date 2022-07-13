@@ -4,69 +4,69 @@
 //approach1-brute force
 //tc-O(n^2)
 //sc-O(1)
-//#include<iostream>
-// using namespace std;
+#include<iostream>
+using namespace std;
 
-// void twotimeoccurence(int arr[],int n){
-//     for(int i=0;i<n;i++){
-//         for(int j=i+1;j<n;j++){
-//             if(arr[i]==arr[j]){
-//                 cout<<arr[i]<<endl;
-//                 break;
-//             }
-//         }
-//     }
-// }
+void twotimeoccurence(int arr[],int n){
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(arr[i]==arr[j]){
+                cout<<arr[i]<<endl;
+                break;
+            }
+        }
+    }
+}
 
-// int main(){
-//     int n;
+int main(){
+    int n;
     
-//     cout<<"enter size of array";
-//     cin>>n;
+    cout<<"enter size of array";
+    cin>>n;
     
-//     int arr[n];
-//     cout<<"enter array";
+    int arr[n];
+    cout<<"enter array";
     
-//     for(int i=0;i<n;i++){
-//         cin>>arr[i];
-//     }
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
 
-//     twotimeoccurence(arr,n);
-// }
+    twotimeoccurence(arr,n);
+}
 
 //approach2-sort array then scan
 //tc-O(nlogn)
 //sc-O(1)
 
 
-// #include<iostream>
-// #include<algorithm>
-// using namespace std;
+#include<iostream>
+#include<algorithm>
+using namespace std;
 
-// void twotimeoccurence(int arr[],int n){
-//     for(int i=0;i<n-1;i++){
-//         if(arr[i]==arr[i+1])
-//             cout<<arr[i]<<endl;
-//     }
-// }
+void twotimeoccurence(int arr[],int n){
+    for(int i=0;i<n-1;i++){
+        if(arr[i]==arr[i+1])
+            cout<<arr[i]<<endl;
+    }
+}
 
-// int main(){
-//     int n;
+int main(){
+    int n;
     
-//     cout<<"enter size of array";
-//     cin>>n;
+    cout<<"enter size of array";
+    cin>>n;
     
-//     int arr[n];
-//     cout<<"enter array";
+    int arr[n];
+    cout<<"enter array";
     
-//     for(int i=0;i<n;i++){
-//         cin>>arr[i];
-//     }
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
 
-//     sort(arr,arr+n);
+    sort(arr,arr+n);
 
-//     twotimeoccurence(arr,n);
-// }
+    twotimeoccurence(arr,n);
+}
 
 
 //approach3-create a count array of size n if the count[i]==2 print it
