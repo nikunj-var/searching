@@ -92,3 +92,100 @@ int main(){
     cout<<"the local minimum is "<<arr[findelement(arr,0,n-1)];
     
 }
+
+//FIND THE MAXIMUM J-I ELEMENT SUCH THAT ARR[J]>ARR[I]
+
+//APPROACH1-BRUTE FORCE
+    //TC-O(N^2)
+    //SC-O(1)
+
+#include<iostream>
+#include<climits>
+#include<algorithm>
+using namespace std;
+
+void findelement(int arr[],int n){
+    int maxdiff=-1;
+
+    for(int i=0;i<n;i++){
+        for(int j=n-1;j>=0;j--){
+            if(arr[j]>arr[i]){
+                maxdiff=max(maxdiff , j-i);
+            }
+        }
+    }
+    cout<<maxdiff;
+}
+
+int main(){
+    int n;
+    int target;
+
+    cout<<"enter size of array";
+    cin>>n;
+    
+    int arr[n];
+    cout<<"enter array";
+    
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+
+    findelement(arr,n);
+    
+}
+
+
+//APPROACH2-read book pageno-305
+    //TC-O(N)
+    //SC-O(n)
+
+#include<iostream>
+#include<stdlib.h>
+#include<climits>
+#include<algorithm>
+using namespace std;
+
+void findelement(int arr[],int n){
+    int maxdiff=-1;
+    int *leftarr=(int*)malloc(n*sizeof(int));
+    int *rightarr=(int*)malloc(n*sizeof(n));
+
+    leftarr[0]=arr[0];
+    for(int i=1;i<n;i++){
+        leftarr[i]=min(arr[i],leftarr[i-1]);
+    }
+    rightarr[n-1]=arr[n-1];
+    for(int i = n-2; i >= 0; i--){
+        rightarr[i]=max(arr[i],rightarr[i+1]);
+    }
+    int i=0,j=0;
+    while(i < n && j < n){
+        if(leftarr[i] < rightarr[j]){
+            maxdiff=max(maxdiff , j-i);
+            j++;
+        }
+        else{
+            i++;
+        }
+    }
+    cout<<maxdiff;
+}
+
+int main(){
+    int n;
+    int target;
+
+    cout<<"enter size of array";
+    cin>>n;
+    
+    int arr[n];
+    cout<<"enter array";
+    
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+
+    findelement(arr,n);
+    
+}
