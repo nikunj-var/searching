@@ -120,45 +120,43 @@ int main(){
     missingno(arr,n,mp);
 }
 
-//approach3->get sum of numbers n*(n+1)/2, and subtract all the numbers from sum ,missing number is remaining.
+//approach4->get sum of numbers n*(n+1)/2, and subtract all the numbers from sum ,missing number is remaining.
 //tc-O(n)
 //sc-O(1)
 
+#include<iostream>
+#include<algorithm>
+using namespace std;
 
+void missingno(int arr[],int n,int sum){
 
-// #include<iostream>
-// #include<algorithm>
-// using namespace std;
+    for(int i=0;i<n;i++){
+        sum-=arr[i];   
+        cout<<sum<<" ";
+    }
 
-// void missingno(int arr[],int n,int sum){
+    cout<<endl<<sum;
+}
 
-//     for(int i=0;i<n;i++){
-//         sum-=arr[i];   
-//         cout<<sum<<" ";
-//     }
+int main(){
+    int n;
 
-//     cout<<endl<<sum;
-// }
+    int sum=0;
 
-// int main(){
-//     int n;
-
-//     int sum=0;
-
-//     cout<<"enter size of array";
-//     cin>>n;
+    cout<<"enter size of array";
+    cin>>n;
     
-//     int arr[n];
-//     cout<<"enter array";
+    int arr[n];
+    cout<<"enter array";
     
-//     for(int i=0;i<n;i++){
-//         cin>>arr[i];
-//     }
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
 
-//     sum=(n*(n+1))/2;
-//     cout<<"   "<<sum<<endl;
-//     missingno(arr,n,sum);
-// }
+    sum=((n+1)*(n+2))/2;
+    cout<<"   "<<sum<<endl;
+    missingno(arr,n,sum);
+}
 
 //approach3->using XOR:
             //i-XOR all the elements of the array,called X.
@@ -167,41 +165,41 @@ int main(){
 //tc-O(n)
 //sc-O(1)
 
-// #include<iostream>
-// #include<algorithm>
-// using namespace std;
+#include<iostream>
+#include<algorithm>
+using namespace std;
 
-// void missingno(int arr[],int n){
+void missingno(int arr[],int n){
 
-//     int x,y;
+    int x,y;
 
-//     x=arr[0];
-//     for(int i=1;i<n;i++){
-//         x^=arr[i];
-//     }
+    x=arr[0];
+    for(int i=1;i<n;i++){
+        x^=arr[i];
+    }
     
-//     y=1;
-//     for(int i=2;i<=n;i++){
-//         y^=i;
-//     }
+    y=1;
+    for(int i=2;i<=n+1;i++){
+        y^=i;
+    }
 
-//     int ans=x^y;
-//     cout<<ans;
-// }
+    int ans=x^y;
+    cout<<ans;
+}
 
-// int main(){
-//     int n;
+int main(){
+    int n;
 
-//     int sum=0;
+    int sum=0;
 
-//     cout<<"enter size of array";
-//     cin>>n;
+    cout<<"enter size of array";
+    cin>>n;
     
-//     int arr[n];
-//     cout<<"enter array";
+    int arr[n];
+    cout<<"enter array";
     
-//     for(int i=0;i<n;i++){
-//         cin>>arr[i];
-//     }
-//     missingno(arr,n);
-// }
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    missingno(arr,n);
+}
